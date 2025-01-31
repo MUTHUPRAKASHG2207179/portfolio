@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muthuprakash Gopal Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #000000;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background-color 0.3s;
+    }
+
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-toggler {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: none; /* Hidden by default on larger screens */
+    }
+
+    .navbar-toggler .bar {
+      width: 30px;
+      height: 4px;
+      margin: 6px 0;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+
+    /* Navbar links */
+    .navbar-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-nav li {
+      list-style-type: none;
+      margin-left: 20px;
+    }
+
+    .navbar-nav li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 8px 15px;
+      transition: background-color 0.3s;
+    }
+
+    .navbar-nav li a:hover {
+      background-color: #ffbd39;
+      border-radius: 5px;
+    }
+
+    /* Navbar collapse */
+    .navbar-collapse {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      margin-top: 80px;
+      flex-direction: column;
+    }
+
+    .hero .container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Image Section */
+    .hero .image {
+      width: 100%;
+      height: 600px;
+      background-image: url('images/MG-Bg-home.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      min-height: 300px;
+      flex-grow: 1;
+    }
+
+    /* Text Section */
+    .hero .text {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .hero .text h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .hero .text p {
+      margin-top: 20px;
+    }
+
+    .hero .text a {
+      text-decoration: none;
+      padding: 12px 30px;
+      margin: 10px;
+      background-color: #ffbd39;
+      color: #333;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      width: auto;
+    }
+
+    .hero .text a:hover {
+      background-color: #e3a500;
+      transform: scale(1.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+		.navbar-brand {
+		font-size: 1.0rem;
+	
+		}
+      .hero .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero .image {
+        height: 300px;
+        margin-bottom: 20px;
+      }
+
+      .hero .text {
+        width: 100%;
+      }
+
+      .hero .text h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .text h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero .text a {
+        width: 80%;
+        padding: 15px 0;
+      }
+
+      .navbar-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .navbar-nav li {
+        margin: 10px 0;
+      }
+
+      .navbar-toggler.active + .navbar-nav {
+        display: flex;
+      }
+
+      /* Show hamburger menu only on small screens */
+      .navbar-toggler {
+        display: block;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero .text h1 {
+        font-size: 2rem;
+      }
+
+      .hero .text h2 {
+        font-size: 1.2rem;
+      }
+
+      .hero .text a {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="navbar-container">
+      <a href="#" class="navbar-brand">Muthuprakash Gopal</a>
+      <button class="navbar-toggler" id="navbar-toggler">
+        <div class="bar"></div>
+		<div class="bar"></div>
+        <div class="bar"></div>
+
+      </button>
+      <ul class="navbar-nav" id="navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <!-- Image Section -->
+      <div class="image"></div>
+
+      <!-- Text Section -->
+      <div class="text">
+        <h1>I'm <span>Muthuprakash Gopal</span></h1>
+        <h2>A Full Stack Web Developer</h2>
+        <p>
+          <a href="https://www.instagram.com/muthuprakash_gopal/" target="_blank">Instagram</a>
+          <a href="https://github.com/MUTHUPRAKASHG2207179" target="_blank">My works</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Navbar -->
+  <script>
+    const navbarToggler = document.getElementById('navbar-toggler');
+    const navbarNav = document.getElementById('navbar-nav');
+
+    navbarToggler.addEventListener('click', () => {
+      navbarNav.classList.toggle('active');
+      navbarToggler.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
